@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   /* ============ БАЗОВЫЕ СБРОСЫ ============ */
-  *, *::before, *::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    -webkit-tap-highlight-color: transparent; 
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
-  html, body { 
-    overflow-x: hidden; 
+  html, body {
+    overflow-x: hidden;
     width: 100%;
     min-height: 100%;
   }
@@ -56,9 +56,9 @@
   /* ============ КОНТЕЙНЕР ============ */
   .container {
     width: 100%;
-    max-width: 1100px; /* Чуть шире для ПК */
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 16px 16px 80px;
+    padding: 16px 16px 32px;
     padding-top: max(16px, env(safe-area-inset-top));
     position: relative;
     z-index: 2;
@@ -108,31 +108,31 @@
   /* ============ БАЛАНС ============ */
   .balance-label {
     text-align: center; color:#7df9ff;
-    letter-spacing: 2px; 
-    font-size: clamp(0.6rem, 2.5vw, 0.75rem); 
+    letter-spacing: 2px;
+    font-size: clamp(0.6rem, 2.5vw, 0.75rem);
     opacity: 0.8;
   }
   .balance {
     text-align: center;
     font-size: clamp(2.5rem, 15vw, 4.5rem);
-    color: #7df9ff; 
+    color: #7df9ff;
     text-shadow: 0 0 30px #7df9ff;
-    margin: 4px 0; 
+    margin: 4px 0;
     font-weight: 900;
     line-height: 1;
   }
-  .balance-sub { 
-    text-align:center; 
-    color:#666; 
-    font-size: clamp(0.6rem, 2vw, 0.8rem); 
-    letter-spacing:2px; 
+  .balance-sub {
+    text-align:center;
+    color:#666;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    letter-spacing:2px;
   }
-  
+
   .progress-wrap {
     margin-top: 16px;
-    height: 8px; 
+    height: 8px;
     background: rgba(125,249,255,0.1);
-    border-radius: 10px; 
+    border-radius: 10px;
     overflow: hidden;
   }
   .progress-bar {
@@ -144,21 +144,20 @@
   }
   .progress-text {
     text-align: center; margin-top: 8px;
-    font-size: clamp(0.6rem, 2.5vw, 0.75rem); 
+    font-size: clamp(0.6rem, 2.5vw, 0.75rem);
     color: #7df9ff; letter-spacing: 2px;
   }
 
-  h2 { 
-    color:#a855f7; 
-    font-size: clamp(0.9rem, 3vw, 1.1rem); 
-    letter-spacing: 2px; 
-    margin-bottom: 16px; 
+  h2 {
+    color:#a855f7;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
   }
 
   /* ============ СЕТКА ЛОКАЦИЙ ============ */
   .locations-grid {
     display: grid;
-    /* Автоматически: 1 колонка на мобильных, 2 на планшетах, 3 на ПК */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: clamp(10px, 3vw, 16px);
   }
@@ -170,7 +169,7 @@
     padding: clamp(12px, 3vw, 18px);
     transition: all 0.3s;
     position: relative;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     overflow: hidden;
   }
@@ -187,31 +186,31 @@
     z-index: 1;
   }
   .location-card h3 {
-    color:#fff; 
-    font-size: clamp(0.85rem, 3vw, 0.95rem); 
+    color:#fff;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
     margin-bottom: 8px;
-    padding-right: 70px; 
+    padding-right: 70px;
     line-height: 1.25;
   }
   .location-card .desc {
-    font-size: clamp(0.65rem, 2.2vw, 0.75rem); 
-    color: #b0b0b0; 
+    font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+    color: #b0b0b0;
     line-height: 1.5;
-    margin-bottom: 14px; 
+    margin-bottom: 14px;
     flex: 1;
     word-wrap: break-word;
   }
   .location-card .desc .addr {
-    color: #7df9ff; 
-    display: block; 
+    color: #7df9ff;
+    display: block;
     margin-bottom: 4px;
   }
   .location-card .points {
-    color:#ff6ec7; font-weight:900; 
+    color:#ff6ec7; font-weight:900;
     font-size: clamp(0.85rem, 2.5vw, 1rem);
     margin-bottom: 12px;
   }
-  
+
   /* ============ ФОТО-ЗОНА ============ */
   .photo-zone {
     border: 2px dashed rgba(125,249,255,0.3);
@@ -229,9 +228,9 @@
     display: flex; align-items: center; justify-content: center;
     user-select: none;
   }
-  .photo-zone:hover, .photo-zone:active { 
-    border-color: #7df9ff; 
-    background: rgba(125,249,255,0.08); 
+  .photo-zone:hover, .photo-zone:active {
+    border-color: #7df9ff;
+    background: rgba(125,249,255,0.08);
   }
   .photo-zone.has-photo {
     border-style: solid;
@@ -239,7 +238,7 @@
     padding: 0;
   }
   .photo-zone img {
-    width: 100%; 
+    width: 100%;
     height: auto;
     max-height: 160px;
     object-fit: cover;
@@ -265,7 +264,7 @@
     box-shadow: 0 0 40px rgba(125,249,255,0.8);
     z-index: 9999;
     transition: transform 0.4s cubic-bezier(0.68,-0.55,0.27,1.55);
-    font-size: clamp(0.7rem, 2.5vw, 0.85rem); 
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
     max-width: 90vw;
     text-align: center;
     white-space: nowrap;
@@ -295,7 +294,7 @@
   }
   .photo-viewer.active { display: flex; }
   .photo-viewer img {
-    max-width: 95vw; 
+    max-width: 95vw;
     max-height: 80vh;
     border-radius: 16px;
     border: 2px solid #7df9ff;
@@ -303,8 +302,8 @@
     object-fit: contain;
   }
   .photo-viewer .close {
-    position: absolute; 
-    top: max(16px, env(safe-area-inset-top)); 
+    position: absolute;
+    top: max(16px, env(safe-area-inset-top));
     right: 16px;
     background: #ff3b5c; color: #fff;
     border: none; width: 48px; height: 48px;
@@ -314,9 +313,52 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 
-  /* ============ СПЕЦИАЛЬНО ДЛЯ МОБИЛЬНЫХ (Камера вместо проводника) ============ */
+  /* ============ ПОДВАЛ ============ */
+  .site-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+    padding: 24px 16px calc(32px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(125,249,255,0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer-title {
+    color: #a855f7;
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .footer-map {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(125,249,255,0.25);
+    box-shadow: 0 0 40px rgba(125,249,255,0.12);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .footer-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .footer-note {
+    margin-top: 14px;
+    color: #7df9ff;
+    font-size: clamp(0.55rem, 2vw, 0.7rem);
+    letter-spacing: 2px;
+    opacity: 0.7;
+  }
+
+  /* ============ СПЕЦИАЛЬНО ДЛЯ МОБИЛЬНЫХ ============ */
   @media (max-width: 768px) {
-    /* На телефонах клик по зоне сразу открывает камеру */
     input[type="file"] {
       capture: environment;
     }
@@ -349,6 +391,17 @@
       <div class="locations-grid" id="locations"></div>
     </div>
   </div>
+
+  <!-- ============ ПОДВАЛ ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-title">КАРТА МАРШРУТА</p>
+      <div class="footer-map">
+        <img src="map.jpg" alt="Карта Гагаринского маршрута в Оренбурге" loading="lazy">
+      </div>
+      <p class="footer-note">ГАГАРИНСКИЙ МАРШРУТ · ОРЕНБУРГ</p>
+    </div>
+  </footer>
 
   <div class="photo-viewer" id="photoViewer">
     <button class="close" onclick="closePhotoViewer()">✕</button>
@@ -447,12 +500,10 @@ function renderLocations() {
     `;
   }).join('');
 
-  // Обработчики фото-зон
   document.querySelectorAll('.photo-zone').forEach(zone => {
     const locId = parseInt(zone.dataset.loc);
     const input = zone.querySelector('input');
-    
-    // Клик по зоне
+
     zone.addEventListener('click', (e) => {
       if (e.target.tagName === 'INPUT') return;
       if (zone.classList.contains('has-photo')) {
@@ -462,7 +513,6 @@ function renderLocations() {
       }
     });
 
-    // Изменение файла
     input.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (!file) return;
