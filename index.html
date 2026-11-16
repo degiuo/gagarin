@@ -313,6 +313,73 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 
+  /* ============ ПРАВИЛА МАРШРУТА ============ */
+  .rules-card h2 {
+    margin-bottom: 18px;
+  }
+  .rules-list {
+    list-style: none;
+    counter-reset: rule;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .rules-list > li {
+    counter-increment: rule;
+    position: relative;
+    padding-left: 46px;
+    font-size: clamp(0.68rem, 2.3vw, 0.8rem);
+    color: #c8c8c8;
+    line-height: 1.6;
+  }
+  .rules-list > li::before {
+    content: counter(rule);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: #060810;
+    background: linear-gradient(135deg, #7df9ff, #a855f7);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(125,249,255,0.5);
+  }
+  .rule-title {
+    display: block;
+    color: #7df9ff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: clamp(0.72rem, 2.5vw, 0.85rem);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  .rules-sublist {
+    list-style: none;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rules-sublist li {
+    position: relative;
+    padding-left: 18px;
+    color: #b0b0b0;
+    font-size: clamp(0.63rem, 2.1vw, 0.74rem);
+    line-height: 1.5;
+  }
+  .rules-sublist li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: #ff6ec7;
+    font-size: 0.65rem;
+  }
+
   /* ============ ПОДВАЛ ============ */
   .site-footer {
     position: relative;
@@ -389,6 +456,52 @@
     <div class="card">
       <h2>🪐 ТОЧКИ МАРШРУТА</h2>
       <div class="locations-grid" id="locations"></div>
+    </div>
+
+    <!-- ============ ПРАВИЛА МАРШРУТА ============ -->
+    <div class="card rules-card">
+      <h2>📜 ПРАВИЛА МАРШРУТА</h2>
+      <ol class="rules-list">
+        <li>
+          <span class="rule-title">Старт</span>
+          На главной сцене ведущий рассказывает суть «Гагаринского маршрута». На фоне — QR-код.
+          Участник сканирует его и получает карту маршрута. Также с картой можно ознакомиться
+          в сообществе «Гагаринский маршрут» города Оренбург в социальной сети ВКонтакте.
+        </li>
+        <li>
+          <span class="rule-title">Точки маршрута</span>
+          На пути следования установлены пять картонных фигур космонавтов с QR-кодами:
+          <ul class="rules-sublist">
+            <li>Здание бывшего Оренбургского высшего военного авиационного училища лётчиков
+              (ул. Советская, 1) — ныне кадетская школа-интернат им. И.И. Неплюева;</li>
+            <li>Дом-музей имени Юрия и Валентины Гагариных (ул. Чичерина, 35);</li>
+            <li>Памятник Ю.А. Гагарину (пересечение ул. Советской и ул. Володарского);</li>
+            <li>Оренбургский областной драматический театр им. М. Горького (ул. Советская, 26);</li>
+            <li>Оренбургский государственный татарский драматический театр им. М. Файзи
+              (ул. Советская, 52).</li>
+          </ul>
+        </li>
+        <li>
+          <span class="rule-title">Прохождение точки</span>
+          Участник подходит к картонной фигуре космонавта, находит на ней QR-код, сканирует его
+          и делает селфи.
+        </li>
+        <li>
+          <span class="rule-title">Начисление баллов</span>
+          За каждое селфи с привязкой к геолокации начисляются баллы в сайте с ботом.
+        </li>
+        <li>
+          <span class="rule-title">Финиш маршрута</span>
+          Вечером первого дня (20:00–21:00) участники возвращаются к главной сцене, где у ларька
+          «Финиш маршрута» показывают накопленные баллы и обменивают их на сувенирную продукцию
+          (футболки, шопперы, вязаные игрушки-космонавты, блокноты).
+        </li>
+        <li>
+          <span class="rule-title">Второй день</span>
+          13 апреля с 12:00 до 18:00 на улице Советской у тех, кто не успел, есть возможность
+          пройти квест и собрать баллы.
+        </li>
+      </ol>
     </div>
   </div>
 
